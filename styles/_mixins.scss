@@ -1,9 +1,37 @@
-@mixin d-flex($justify:center,$align:center,$wrap:nowrap,$direction:row,$column:0,$row-gap:0) {
+@mixin d-flex(
+    $justify: center,
+    $align: center,
+    $wrap: nowrap,
+    $direction: row,
+    $column: 0,
+    $row-gap: 0
+) {
     display: flex;
-    justify-content:$justify ;
+    justify-content: $justify;
     align-items: $align;
     flex-wrap: $wrap;
     flex-direction: $direction;
     column-gap: $column;
     row-gap: $row-gap;
+}
+
+@mixin font($size: 16, $weight: 400, $color: #fff, $style: normal) {
+    font: {
+        size: $size;
+        weight: $weight;
+        style: $style;
+    }
+    color: $color;
+}
+
+@mixin position($type: 1,$zIndex: 1,$inset: -1,$top-or-bottom,$left-or-right,$value1: 0,$value2: 0) {
+    position: $type;
+    z-index: $zIndex;
+
+    @if $inset >-1 {
+        inset: $inset;
+    } @else {
+        #{$top-or-bottom}: $value1;
+        #{$left-or-right}: $value2;
+    }
 }
