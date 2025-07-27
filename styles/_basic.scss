@@ -3,5 +3,32 @@
 }
 
 body {
-    font-family:Roboto ;
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+p,
+button {
+    margin: 0;
+}
+
+li{
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
 }
