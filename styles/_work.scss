@@ -1,0 +1,102 @@
+@use "variables" as v;
+@use "sass:color";
+@use "mixins" as m;
+@use "placeholders";
+
+.work-section {
+    padding: 0 20px 180px;
+
+    .work {
+        margin: 0 auto;
+        text-align: center;
+
+        &__title {
+            margin: 0 0 80px 0;
+            @include m.font(60px, 400, v.$color-white);
+
+            @media (max-width: v.$media-xs) {
+                display: none;
+            }
+        }
+        &__cards-wrapper {
+            max-width: 950px;
+            margin: 0 auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            row-gap: 70px;
+            justify-items: center;
+            grid-template-areas:
+                "analysis design dev"
+                "maintenance testing integration";
+
+            .card {
+                &--analysis {
+                    grid-area: analysis;
+                    justify-self: start;
+                }
+                &--development {
+                    grid-area: dev;
+                    justify-self: end;
+                }
+                &--maintenance {
+                    grid-area: maintenance;
+                    justify-self: start;
+                }
+                &--integration {
+                    grid-area: integration;
+                    justify-self: end;
+                }
+            }
+
+            .icon {
+                &--analysis {
+                    width: 53px;
+                    height: 55px;
+                }
+                &--design {
+                    width: 48px;
+                    height: 41px;
+                }
+                &--development {
+                    width: 51px;
+                    height: 32px;
+                }
+                &--maintenance {
+                    width: 43px;
+                    height: 41px;
+                }
+                &--testing {
+                    width: 44px;
+                    height: 42px;
+                }
+                &--integration {
+                    width: 42px;
+                    height: 36px;
+                }
+            }
+
+            @media (max-width: v.$media-md) {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(3, 1fr);
+                row-gap: 70px;
+                justify-items: center;
+                grid-template-areas:
+                    "analysis design "
+                    "dev maintenance"
+                    "testing integration";
+            }
+
+            .card {
+                &--analysis,
+                &--development,
+                &--maintenance,
+                &--integration {
+                    justify-self: center;
+                }
+            }
+        }
+    }
+}
