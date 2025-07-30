@@ -1,0 +1,214 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+.about-section {
+    padding: 140px 0 0 0;
+
+    .about {
+        margin: 0 auto;
+        @include m.d-flex(start, center, nowrap, column, 0, 130px);
+
+        &__quality {
+            width: 100%;
+            height: 400px;
+            padding: 0 0 0 15px;
+            background: url("../assets/webp/computer.webp") 100% 70%/550px
+                no-repeat;
+
+            &-title {
+                @include m.font(45px, 400, v.$color-white);
+            }
+
+            &-desc {
+                padding: 20px 0 0 0;
+                @include m.font(20px, 300, v.$color-white);
+                max-width: 590px;
+                line-height: 1.4;
+            }
+
+            @media (max-width: v.$media-xl) {
+                background: linear-gradient(
+                        176deg,
+                        rgba(30, 84, 220, 0.78) 0%,
+                        rgba(0, 0, 0, 0) 74%
+                    ),
+                    url("../assets/webp/computer.webp") 100% 45%/500px no-repeat;
+            }
+
+            @media (max-width: v.$media-md) {
+                background: url(../assets/webp/computer.webp) 100% 100% / 450px
+                    no-repeat;
+
+                &-title {
+                    @include m.font(35px, 400, v.$color-white);
+                }
+
+                &-desc {
+                    @include m.font(16px, 300, v.$color-white);
+                    max-width: 500px;
+                }
+            }
+
+            @media (max-width: v.$media-sm) {
+                background: url(../assets/webp/computer.webp) 150px 100% / 400px
+                    no-repeat;
+            }
+        }
+
+        &__touch {
+            width: 100%;
+            height: 500px;
+            padding: 0 15px 0 0;
+            position: relative;
+            @include m.d-flex(end, end, nowrap, column, 0, 20px);
+
+            &::before {
+                width: 100%;
+                height: 100%;
+                @include m.position(absolute, -1, -1, top, left, 80px, -470px);
+                content: "";
+                background: url("../assets/webp/phone.webp") 50% 70% / contain
+                    no-repeat;
+                rotate: 12deg;
+            }
+
+            &-title {
+                @include m.font(45px, 400, v.$color-white);
+            }
+
+            &-desc {
+                text-align: right;
+                @include m.font(20px, 300, v.$color-white);
+                max-width: 440px;
+                line-height: 1.4;
+            }
+
+            @media (max-width: v.$media-xl) {
+                &::before {
+                    @include m.position(
+                        absolute,
+                        -1,
+                        -1,
+                        top,
+                        left,
+                        83px,
+                        -500px
+                    );
+                }
+            }
+
+            @media (max-width: v.$media-lg) {
+                height: 450px;
+                &::before {
+                    @include m.position(
+                        absolute,
+                        -1,
+                        -1,
+                        top,
+                        left,
+                        53px,
+                        -500px
+                    );
+                }
+            }
+
+            @media (max-width: v.$media-md) {
+                height: 400px;
+                @include m.d-flex(start, end, nowrap, column, 0, 20px);
+
+                &-title {
+                    @include m.font(35px, 400, v.$color-white);
+                }
+
+                &-desc {
+                    @include m.font(16px, 300, v.$color-white);
+                    max-width: 340px;
+                }
+                &::before {
+                    @include m.position(
+                        absolute,
+                        -1,
+                        -1,
+                        top,
+                        left,
+                        0px,
+                        -280px
+                    );
+                    background: url("../assets/webp/phone.webp") 92% 8% / 99%
+                        no-repeat;
+                    rotate: 70deg;
+                }
+            }
+
+            @media (max-width: v.$media-sm) {
+                &::before {
+                    @include m.position(
+                        absolute,
+                        -1,
+                        -1,
+                        top,
+                        left,
+                        0px,
+                        -235px
+                    );
+                    background: url("../assets/webp/phone.webp") 92% 8% / 106%
+                        no-repeat;
+                    rotate: 70deg;
+                }
+            }
+        }
+
+        &__approach {
+            margin: 130px 0 0 0;
+            width: 100%;
+            height: 800px;
+            padding: 0  0 0 15px;
+            background: url("../assets/webp/cactus.webp") 100% 70%/contain
+                no-repeat;
+
+            &-title {
+                margin: 250px 0 0 0;
+                @include m.font(45px, 400, v.$color-white);
+            }
+
+            &-desc {
+                padding: 20px 0 0 0;
+                @include m.font(20px, 300, v.$color-white);
+                max-width: 730px;
+                line-height: 1.4;
+            }
+
+            @media (max-width: v.$media-lg) {
+                background: url("../assets/webp/cactus.webp") 100% 100%/500px
+                no-repeat;
+
+                &-desc {
+                    max-width: 500px;
+                }
+            }
+
+            @media (max-width: v.$media-md) {
+                height: 560px;
+                background: url("../assets/webp/cactus.webp") 100% 100%/320px
+                no-repeat;
+
+                &-title {
+                    margin: 0;
+                    @include m.font(35px, 400, v.$color-white);
+                }
+
+                &-desc {
+                    @include m.font(16px, 300, v.$color-white);
+                    max-width: 400px;
+                }
+            }
+
+            @media (max-width: v.$media-sm) {
+                margin: 0;
+                height: 500px;
+                background: url("../assets/webp/cactus.webp") 100% 100%/250px
+                no-repeat;
+            }
+        }
+    }
+}
