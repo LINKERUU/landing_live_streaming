@@ -1,4 +1,42 @@
 @use "variables" as v;
+@use "mixins" as m;
+@use "sass:color";
+
+
+%input-template {
+    width: 100%;
+    height: 47px;
+    z-index: -1;
+    border-radius: 20px;
+    border: 1px solid v.$color-gray;
+    padding:0 1em;
+    @include m.font(25px,400,v.$color-black);
+
+    &::placeholder{
+        @include m.font(25px,100,v.$color-gray);
+    }
+}
+
+%cloud-template {
+    background: url("../assets/webp/cloud.webp") center/contain no-repeat;
+    width: 700px;
+    height: 240px;
+}
+
+%arrow-size {
+    width: 36px;
+    height: 23px;
+    fill: v.$color-white;
+}
+
+%slider-button {
+    width: 67px;
+    height: 67px;
+    border: none;
+    border-radius: 20px;
+    background-color: color.adjust(v.$color-white, $alpha: -0.9);
+    rotate: 45deg;
+}
 
 %hover-black {
     &:hover {

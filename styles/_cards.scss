@@ -54,3 +54,106 @@
         }
     }
 }
+
+.card-img {
+    text-align: center;
+    width: 325px;
+    height: 295px;
+    position: relative;
+    border-radius: 20px;
+    background-color: color.adjust(v.$color-white, $alpha: -0.9);
+    @include m.d-flex(space-between, center, nowrap, column);
+    overflow: hidden;
+
+    &__title {
+        @include m.font(23px, 400, v.$color-white);
+        @include m.d-flex(center, center, wrap, column);
+        flex-shrink: 0;
+        flex-grow: 1;
+    }
+
+    &__preview {
+        width: 100%;
+        height: 220px;
+    }
+
+    &__btn {
+        @include m.position(absolute, 1, -1, bottom, left, -20px, -30px);
+        width: 120px;
+        height: 90px;
+        border-radius: 20px;
+        border: none;
+        background-color: v.$color-white;
+        rotate: z 9deg;
+        transition: all 0.2s;
+        &-icon {
+            width: 36px;
+            height: 33px;
+            fill: v.$color-black;
+            rotate: -7deg;
+            stroke: v.$color-black;
+            stroke-width: 0.5px;
+            translate: 12px -3px;
+        }
+
+        &:hover {
+            cursor: pointer;
+            rotate: z 7deg;
+            scale: 1.3;
+
+            .card-img__btn-icon {
+                rotate: z -7deg;
+                translate: 17px -8px;
+            }
+        }
+    }
+
+    &:hover {
+        cursor: pointer;
+        box-shadow: 0 8px 20px 12px rgba(0, 0, 0, 0.15),
+            inset 0 -5px 70px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (max-width: v.$media-sm) {
+        width: 300px;
+    }
+}
+
+.wave-card {
+    width: 500px;
+    height: 275px;
+    background: url("../assets/wave_bg.svg") center/cover no-repeat;
+    @include m.d-flex(start, start, nowrap, column, 0, 35px);
+
+    &__avatar {
+        margin: 20px 0 0 30px;
+        border-radius: 50%;
+    }
+
+    &__quote {
+        @include m.font(20px, 400, v.$color-white);
+        margin: 0 60px 0 30px;
+        text-align: justify;
+        line-height: 1.4;
+    }
+
+    @media (max-width: v.$media-md) {
+        width: 330px;
+        row-gap: 15px;
+        margin: 0 auto;
+        background: url("../assets/wave_bg.svg") 50% 50% / contain no-repeat;
+
+        &__avatar {
+            width: 35px;
+            height: 35px;
+            margin: 60px 0 0 30px;
+        }
+
+        &__quote {
+            @include m.font(13px, 400, v.$color-white);
+            margin: 0 60px 0 30px;
+            text-align: justify;
+            line-height: 1.4;
+        }
+    }
+}
