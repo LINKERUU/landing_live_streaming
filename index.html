@@ -23,7 +23,7 @@
                 </div>
                 <div class="nav__links">
                     <ul class="nav__links-list list" aria-label="header nav links">
-                        <li class="list__item" >
+                        <li class="list__item">
                             <a href="#" class="list__item-link">about us</a>
                         </li>
                         <li class="list__item">
@@ -211,7 +211,7 @@
                                 <use href="assets/sprites.svg#arrow-icon" />
                             </svg>
                         </button>
-                         <button class="slider__right-btn">
+                        <button class="slider__right-btn">
                             <svg class="slider__right-btn-icon" aria-label="arrow icon">
                                 <use href="assets/sprites.svg#arrow-icon" />
                             </svg>
@@ -228,6 +228,27 @@
                     </div>
                 </div>
             </div>
+        </section>
+        <section class="form-section">
+            <div class="container">
+                <div class="form-section__wrapper">
+                    <form class="form" aria-label="form-title" action="https://mailto:streaming__compony@mail.ru"
+                        aria-labelledby="form-title">
+                        <label for="input-name" id="form-title" class="form__title">Ready to get started? Drop us a
+                            line!</label>
+                        <input type="text" name="" id="input-name" placeholder="Name" class="form__name"
+                            aria-required="true" required autocomplete="off" name="firstName">
+                        <input type="email" name="" id="input-email" placeholder="Email" class="form__email"
+                            aria-required="true" required autocomplete="off" name="email">
+                        <input type="text" name="" id="input-question" placeholder="What we can do for you?"
+                            aria-required="true" class="form__question" name="question" required autocomplete="off">
+
+                        <button class="form__submit-btn">Send</button>
+                    </form>
+                </div>
+            </div>
+            <div class="form-section__bg-cloud cloud--left"></div>
+            <div class="form-section__bg-cloud cloud--right"></div>
         </section>
     </main>
 </body>
