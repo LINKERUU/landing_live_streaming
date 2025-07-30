@@ -1,0 +1,49 @@
+@use "variables" as v;
+@use "sass:color";
+@use "mixins" as m;
+@use "placeholders";
+
+.contacts-section {
+    background-color: color.adjust(v.$color-white, $alpha: -0.9);
+    box-shadow: 0 -5px 20px 0 rgba(0, 0, 0, 0.15);
+
+    .footer {
+        width: 100%;
+        height: 135px;
+        margin: 0 auto;
+        padding: 0 15px;
+        @include m.d-flex(space-between, center, nowrap, row);
+
+        &__terms {
+            @include m.d-flex(start, start, nowrap, column, 0, 10px);
+
+            &-link {
+                @include m.font(20px, 400, v.$color-white);
+                @include m.d-flex(start, start, nowrap, row, 38px, 0);
+           
+                @extend %hover-black
+            }
+
+            &-rights {
+                @include m.font(14px, 300, v.$color-white);
+            }
+        }
+
+        &__contacts {
+            @include m.d-flex(end, end, nowrap, row,44px);
+
+            &-icon {
+                width: 24px;
+                height: 25px;
+                fill: v.$color-white;
+
+                @extend %hover-black-icon
+            }
+        }
+
+        @media(max-width:v.$media-sm){
+            @include m.d-flex(center, center, nowrap, column-reverse,0,16px);
+        }
+    }
+
+}
