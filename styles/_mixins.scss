@@ -24,7 +24,7 @@
     color: $color;
 }
 
-@mixin position($type: 1,$zIndex: 1,$inset: -1,$top-or-bottom,$left-or-right,$value1: 0,$value2: 0) {
+@mixin position($type: 1,$zIndex: 1,$inset: -1,$top-or-bottom:top,$left-or-right:left,$value1: 0,$value2: 0) {
     position: $type;
     z-index: $zIndex;
 

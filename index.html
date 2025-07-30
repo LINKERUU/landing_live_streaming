@@ -44,6 +44,39 @@
             </nav>
         </div>
     </header>
+
+    <div class="mobile-navigation">
+        <label for="checkboxID" class="mobile-navigation__burger">
+            <svg class="mobile-navigation__burger-icon" aria-label="burger img">
+                <use href="assets/sprites.svg#burger" />
+            </svg>
+        </label>
+
+        <input type="checkbox" name="toggler" class="mobile-navigation__toggler" id="checkboxID">
+
+        <nav class="mobile-navigation__menu nav">
+            <ul class="nav__list">
+                <li class="nav__list-item">
+                    <a href="#aboutID" class="nav__list-item-link">about us</a>
+                </li>
+                <li class="nav__list-item">
+                    <a href="#footerID" class="nav__list-item-link">contact</a>
+                </li>
+                <li class="nav__list-item">
+                    <a href="#experienceID" class="nav__list-item-link">COVID-19 UPDATE</a>
+                </li>
+            </ul>
+
+            <label for="checkboxID" class="mobile-navigation__cross">
+                <svg class="mobile-navigation__cross-icon" aria-label="cross img">
+                    <use href="assets/sprites.svg#cross" />
+                </svg>
+            </label>
+        </nav>
+
+
+    </div>
+
     <main aria-label="main content">
         <section class="hero-section" aria-label="section hero">
             <div class="container">
@@ -124,7 +157,7 @@
             </div>
         </section>
         <hr class="divider">
-        <section class="about-section">
+        <section class="about-section" id="aboutID">
             <div class="container">
                 <div class="about">
                     <div class="about__quality">
@@ -150,7 +183,7 @@
             </div>
         </section>
         <hr class="divider">
-        <section class="experience-section">
+        <section class="experience-section" id="experienceID">
             <div class="container">
                 <div class="experience">
                     <h2 class="experience__title">Our experience</h2>
@@ -251,6 +284,36 @@
             <div class="form-section__bg-cloud cloud--right"></div>
         </section>
     </main>
+    <footer class="contacts-section" id="footerID">
+        <div class="container">
+            <div class="footer">
+                <div class="footer__terms">
+                    <div class="footer__terms-link">
+                        <a href="" class="footer__terms-link">Terms of Use</a>
+                        <a href="#" class="footer__terms-link">Privacy Policy</a>
+                    </div>
+                    <div class="footer__terms-rights">© CloudFlex 2024. All Rights Reserved.</div>
+                </div>
+                <address class="footer__contacts">
+                    <a href="https://linkedin.com">
+                        <svg class="footer__contacts-icon" aria-label="linkedin icon">
+                            <use href="assets/sprites.svg#linkedin-icon" />
+                        </svg>
+                    </a>
+                    <a href="https://facebook.com">
+                        <svg class="footer__contacts-icon" aria-label="facebook icon">
+                            <use href="assets/sprites.svg#facebook-icon" />
+                        </svg>
+                    </a>
+                    <a href="https://instagram.com">
+                        <svg class="footer__contacts-icon" aria-label="instagram icon">
+                            <use href="assets/sprites.svg#instagram-icon" />
+                        </svg>
+                    </a>
+                </address>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>

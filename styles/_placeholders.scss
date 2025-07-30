@@ -45,6 +45,13 @@
     }
 }
 
+%hover-stroke-black {
+    &:hover {
+        cursor: pointer;
+        stroke: v.$color-black;
+    }
+}
+
 %hover-light {
     &:hover {
         cursor: pointer;

@@ -42,8 +42,15 @@
         &__links {
             flex-grow: 1;
             .list {
-                @include m.d-flex(start, center, nowrap, row, min(5vw,90px), 0);
-                padding: 0 0 0 min(5vw,100px);
+                @include m.d-flex(
+                    start,
+                    center,
+                    nowrap,
+                    row,
+                    min(5vw, 90px),
+                    0
+                );
+                padding: 0 0 0 min(5vw, 100px);
 
                 &__item {
                     &-link {
@@ -57,7 +64,14 @@
 
             @media (max-width: v.$media-lg) {
                 .list {
-                    @include m.d-flex(center, center, nowrap, row, min(2vw,90px), 0);
+                    @include m.d-flex(
+                        center,
+                        center,
+                        nowrap,
+                        row,
+                        min(2vw, 90px),
+                        0
+                    );
                     padding: 0;
                 }
             }
@@ -94,5 +108,79 @@
                 }
             }
         }
+        @media (max-width: v.$media-md) {
+            position: relative;
+            &__links,
+            .globe,
+            .covid {
+                display: none;
+            }
+        }
+    }
+}
+
+.mobile-navigation {
+    display: none;
+
+    &__burger {
+        @include m.position(absolute, 10, -1, top, right, 10px, 20px);
+
+        &-icon {
+            width: 33px;
+            height: 22px;
+            stroke: v.$color-white;
+
+            @extend %hover-stroke-black;
+        }
+    }
+
+    &__toggler {
+        display: none;
+
+        &:checked + .nav {
+            translate: 0;
+        }
+    }
+
+    .nav {
+        position: relative;
+        padding: 60px 0 0 40px;
+        @include m.position(fixed, 99, 0);
+        background-color: color.adjust(v.$color-black, $alpha: -0.7);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        translate: 100% 0;
+        transition: translate 0.22s;
+        text-transform: capitalize;
+
+        &__list {
+            @include m.d-flex(start, start, nowrap, column, 0, 45px);
+
+            &-item {
+                &-link {
+                    @include m.font(30px, 400, v.$color-white);
+                    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+
+                    @extend %hover-black;
+                }
+
+            }
+        }
+    }
+
+    &__cross {
+        @include m.position(absolute, 10, -1, top, right, 10px, 20px);
+
+        &-icon {
+            width: 25px;
+            height: 22px;
+            stroke: v.$color-white;
+
+            @extend %hover-stroke-black;
+        }
+    }
+
+    @media (max-width: v.$media-md) {
+        display: block;
     }
 }
