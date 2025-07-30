@@ -1,4 +1,20 @@
 @use "variables" as v;
+@use "sass:color";
+
+%arrow-size {
+    width: 36px;
+    height: 23px;
+    fill: v.$color-white;
+}
+
+%slider-button {
+    width: 67px;
+    height: 67px;
+    border: none;
+    border-radius: 20px;
+    background-color: color.adjust(v.$color-white, $alpha: -0.9);
+    rotate: 45deg;
+}
 
 %hover-black {
     &:hover {
